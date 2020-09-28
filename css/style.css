@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+
+.container {
+width: 600px;
+margin: 20px auto;
+};
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    height: 2rem;
+    margin-top: 16px;
+}
+
+.button {
+    background-color: lightblue;
+    width: 5rem;
+    height: 2rem;
+    border-color: lightblue;
+    border-radius: 4px;
+}
+
+.input {
+    padding: 9px;
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #444;
+}
+
+.complete {
+    text-decoration: line-through;
+}
+
+li {
+    text-decoration: none;
+}
