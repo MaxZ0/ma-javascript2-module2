@@ -20,6 +20,8 @@ const books = [
 
 console.log(books);
 
+
+
 function loadBooks(books) {
     const library = books;
 
