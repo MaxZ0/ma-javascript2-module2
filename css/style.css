@@ -3,7 +3,7 @@
 }
 
 .container {
-width: 600px;
+width: 570px;
 margin: 20px auto;
 };
 
@@ -40,4 +40,14 @@ h1{
 
 li {
     text-decoration: none;
+}
+
+.details {
+    background-color: lightblue;
+    padding: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 600px;
+    margin: 20px auto;
+    color: #444;
 }

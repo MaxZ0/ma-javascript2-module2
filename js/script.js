@@ -20,34 +20,77 @@ const books = [
 
 console.log(books);
 
+let listItems = [books];
+
+const button = document.querySelector("button"); // right?
+
+//button.addEventListener("click", addToList);
 
 
-function loadBooks(books) {
-    const library = books;
+const container = document.querySelector("#show");
+function render(){
 
-    const container = document.querySelector("#show");
-    let newHTML = "";
+        console.log(books)
+        
 
-    for (let i = 0; i < library.length; i++) {
-        console.log(library[i].title);
-        const bookTitle = library[i].title;
+        container.innerHTML = "";
+        books.forEach((product) => {
+            container.innerHTML += `<div class="demo">
+            <div class="card">
+                <div class="details">
+                    <h2 class="name">${product.title}</h2>
+                    <button class="btn" data-name="button">Trash</button>
+                </div>
+            </div>
+        </div>`;
+        });
 
-        const details = `<div class="">                
-                            <div class="card">
-                                <div class="details">
-                                    <h4 class="name">${bookTitle}</h4>
-                                    <a class="btn details" href="details.html?id=${library[i].isbn}">Details</a>
-                                </div>
-                            </div>
-                        </div>`;
+        const items = document.querySelectorAll("button");
 
-        newHTML += details;
-    }
+        items.forEach(function (item){
+        item.addEventListener("click", handleClick);
+        });
 
-    container.innerHTML = newHTML;
-}
+        const trashCans = document.querySelectorAll("button"); //right?
+        trashCans.forEach(can => {
+            can.addEventListener("click", removeFromList);
+        })
+
+};
+
+render();
 
 
 
+
+
+
+
+
+
+
+
+
+//listItems is your array
+
+
+function removeFromList(idToRemove){
+    
+    console.log(listItems);
+
+
+    const filteredArray = listItems.filter(item => {
+        console.log(item !== idToRemove);
+        if (item.isbn !== idToRemove){
+            return true;
+        }
+    })
+
+    listItems = filteredArray;
+} removeFromList ();
+
+function handleClick(event){
+    event.target.classList.toggle("complete");
+};
 
 
